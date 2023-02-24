@@ -1,0 +1,42 @@
+.YT_Box {
+  display: flex;
+
+  border: 1px solid black;
+
+  position: relative;
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 600px;
+  width: 100%;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .BG_Content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  .BG_Content:is(:hover) {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .YT_Box {
+    height: 400px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .YT_Box {
+    height: 300px;
+  }
+}

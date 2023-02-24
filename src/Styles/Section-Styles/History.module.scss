@@ -1,0 +1,16 @@
+.Timeline_Right {
+  display: none;
+}
+
+// Media Queries Start
+
+@media only screen and (max-width: 650px) {
+  .Timeline_Alternate {
+    display: none;
+  }
+  .Timeline_Right {
+    display: flex;
+  }
+}
+
+// Media Queries End
