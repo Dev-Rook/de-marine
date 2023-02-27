@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 
 // Routes Import Start
 import Index from "./Routes/Index";
+import Services from "./Routes/Services";
 // Routes Import End
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
     <Nav />
       <Routes>
         <Route path={"/"} element={<Index />} />
+        <Route path={"services"} element={<Services />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -35,6 +35,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background-color: rgb(240, 231, 219);
+  background-color: whitesmoke;
   /* background-color: rgb(37,31,21); */
 
   justify-content: center;

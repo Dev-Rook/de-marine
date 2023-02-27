@@ -40,7 +40,7 @@
     display: block;
     width: 80px;
     height: 80px;
-    background: #fa183d;
+    background: rgb(15, 38, 61);
     border-radius: 50%;
     transition: all 200ms;
   }

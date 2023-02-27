@@ -28,10 +28,10 @@ const Nav = () => {
   const [menu, setMenu] = useState(false);
   const [hideMenu, setHideMenu] = useState(true);
 
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState(true);
 
   const changeColor = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 500) {
       setColor(true);
     } else {
       setColor(false);
