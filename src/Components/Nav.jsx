@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useScrollUp from "../Hooks/useScrollUp";
+import useScrollUp from "../Utilities/useScrollUp";
 import Styles from "../Styles/Component-Styles/Nav.module.scss";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -29,7 +29,7 @@ import Hamburger from "hamburger-react";
 const Nav = () => {
   const [menu, setMenu] = useState(false);
   const [hideMenu, setHideMenu] = useState(true);
-
+  const { scrollUp } = useScrollUp();
   const [color, setColor] = useState(true);
 
   const changeColor = () => {
@@ -49,6 +49,12 @@ const Nav = () => {
   const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
+  };
+
+  const doubleFunction = () => {
+    showMenu();
+    scrollUp();
+    handleClick();
   };
 
   return (
@@ -79,7 +85,7 @@ const Nav = () => {
             </div>
           </div>
           <ul className={Styles.Mobile_Navlink_Container}>
-            <Link to={"/"} onClick={showMenu} className={Styles.Menu_Navlink}>
+            <Link to={"/"} onClick={doubleFunction} className={Styles.Menu_Navlink}>
               <li className={Styles.Menu_NavItem}>
                 <HomeOutlinedIcon
                   sx={{ fontSize: 25 }}
@@ -88,9 +94,18 @@ const Nav = () => {
                 <p>Home</p>
               </li>
             </Link>
+            <Link to={"/services"} onClick={doubleFunction} className={Styles.Menu_Navlink}>
+              <li className={Styles.Menu_NavItem}>
+                <HomeOutlinedIcon
+                  sx={{ fontSize: 25 }}
+                  className={Styles.Navlink_Icon}
+                />
+                <p>Services</p>
+              </li>
+            </Link>
             <Link
-              to={"Portfolio"}
-              onClick={showMenu}
+              to={"/projects"}
+              onClick={doubleFunction}
               className={Styles.Menu_Navlink}
             >
               <li className={Styles.Menu_NavItem}>
@@ -98,12 +113,12 @@ const Nav = () => {
                   sx={{ fontSize: 25 }}
                   className={Styles.Navlink_Icon}
                 />
-                <p>Portfolio</p>
+                <p>Projects</p>
               </li>
             </Link>
             <Link
-              to={"Contact"}
-              onClick={showMenu}
+              to={"/contact"}
+              onClick={doubleFunction}
               className={Styles.Menu_Navlink}
             >
               <li className={Styles.Menu_NavItem}>
@@ -116,7 +131,7 @@ const Nav = () => {
             </Link>
             <Link
               to={"DevLogs"}
-              onClick={showMenu}
+              onClick={doubleFunction}
               className={Styles.Menu_Navlink}
             >
               <li className={Styles.Menu_NavItem}>
