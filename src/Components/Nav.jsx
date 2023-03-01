@@ -38,7 +38,7 @@ const Nav = () => {
     }
   };
 
-  window.addEventListener('scroll', changeColor)
+  window.addEventListener("scroll", changeColor);
 
   const showMenu = () => {
     setMenu((prev) => !prev);
@@ -51,7 +51,25 @@ const Nav = () => {
 
   return (
     <nav className={`${Styles.Nav} ${color ? Styles.NavScroll : ""}`}>
-      <div className={Styles.Left_Side}>
+      <ul className={Styles.Navlink_Container_Left}>
+        <li className={Styles.NavItem}>
+          <Link to={"/"} className={Styles.Navlink}>
+            Home
+          </Link>
+        </li>
+        <li className={Styles.NavItem}>
+          <Link to={"services"} className={Styles.Navlink}>
+            Services
+          </Link>
+        </li>
+        <li className={Styles.NavItem}>
+          <Link to={"Portfolio"} className={Styles.Navlink}>
+            Projects
+          </Link>
+        </li>
+      </ul>
+
+      <div className={Styles.Center}>
         {/* <Link to={"/"}>
           <div className={Styles.Logo_Container}>
             <img src={""} className={Styles.Logo} alt="" />
@@ -61,46 +79,31 @@ const Nav = () => {
         <h3 className={Styles.Brand}>D&E Marine Ltd</h3>
       </div>
 
-      <div className={Styles.Right_Side}>
-        <ul className={Styles.Navlink_Container}>
-          <li className={Styles.NavItem}>
-            <Link to={"/"} className={Styles.Navlink}>
-              Home
-            </Link>
-          </li>
-          <li className={Styles.NavItem}>
-            <Link to={"Portfolio"} className={Styles.Navlink}>
-              Services
-            </Link>
-          </li>
-          <li className={Styles.NavItem}>
-            <Link to={"Portfolio"} className={Styles.Navlink}>
-              Projects
-            </Link>
-          </li>
-          <li className={Styles.NavItem}>
-            <Link to={"Portfolio"} className={Styles.Navlink}>
-              History
-            </Link>
-          </li>
-          <li className={Styles.NavItem}>
-            <Link to={"Contact"} className={Styles.Navlink}>
-              Contact
-            </Link>
-          </li>
-          <li className={Styles.NavItem}>
-            <Link to={"DevLogs"} className={Styles.Navlink}>
-              <LogoDevIcon className={Styles.NavIcon} />
-            </Link>
-          </li>
-        </ul>
+      <ul className={Styles.Navlink_Container_Left}>
+        <li className={Styles.NavItem}>
+          <Link to={"staff"} className={Styles.Navlink}>
+            Staff
+          </Link>
+        </li>
+        <li className={Styles.NavItem}>
+          <Link to={"history"} className={Styles.Navlink}>
+            History
+          </Link>
+        </li>
+        <li className={Styles.NavItem}>
+          <Link to={"contact"} className={Styles.Navlink}>
+            Contact
+          </Link>
+        </li>
+      </ul>
 
-        <MenuIcon
-          sx={{ fontSize: 30 }}
-          onClick={showMenu}
-          className={`${Styles.Menu_Icon} ${color ? Styles.Menu_Icon_Scroll : ""}`}
-        />
-      </div>
+      <MenuIcon
+        sx={{ fontSize: 30 }}
+        onClick={showMenu}
+        className={`${Styles.Menu_Icon} ${
+          color ? Styles.Menu_Icon_Scroll : ""
+        }`}
+      />
 
       {/* Mobile Menu Start  */}
 
