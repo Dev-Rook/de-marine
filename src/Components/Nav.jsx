@@ -24,6 +24,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // Material UI Accordion Imports End
 
+import Hamburger from "hamburger-react";
+
 const Nav = () => {
   const [menu, setMenu] = useState(false);
   const [hideMenu, setHideMenu] = useState(true);
@@ -51,66 +53,21 @@ const Nav = () => {
 
   return (
     <nav className={`${Styles.Nav} ${color ? Styles.NavScroll : ""}`}>
-      <ul className={Styles.Navlink_Container_Left}>
-        <li className={Styles.NavItem}>
-          <Link to={"/"} className={Styles.Navlink}>
-            Home
-          </Link>
-        </li>
-        <li className={Styles.NavItem}>
-          <Link to={"services"} className={Styles.Navlink}>
-            Services
-          </Link>
-        </li>
-        <li className={Styles.NavItem}>
-          <Link to={"Portfolio"} className={Styles.Navlink}>
-            Projects
-          </Link>
-        </li>
-      </ul>
-
-      <div className={Styles.Center}>
-        {/* <Link to={"/"}>
-          <div className={Styles.Logo_Container}>
-            <img src={""} className={Styles.Logo} alt="" />
-          </div>
-        </Link> */}
-
-        <h3 className={Styles.Brand}>D&E Marine Ltd</h3>
-      </div>
-
-      <ul className={Styles.Navlink_Container_Left}>
-        <li className={Styles.NavItem}>
-          <Link to={"staff"} className={Styles.Navlink}>
-            Staff
-          </Link>
-        </li>
-        <li className={Styles.NavItem}>
-          <Link to={"history"} className={Styles.Navlink}>
-            History
-          </Link>
-        </li>
-        <li className={Styles.NavItem}>
-          <Link to={"contact"} className={Styles.Navlink}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-
-      <MenuIcon
-        sx={{ fontSize: 30 }}
-        onClick={showMenu}
-        className={`${Styles.Menu_Icon} ${
-          color ? Styles.Menu_Icon_Scroll : ""
-        }`}
-      />
+      <span className={Styles.Span}>
+        <Hamburger
+          className={Styles.HamburgerMenu}
+          onToggle={setMenu}
+          direction="right"
+          // color="rgb(15, 38, 61)"
+          color="red"
+          duration={0.5}
+          size={35}
+        />
+      </span>
 
       {/* Mobile Menu Start  */}
 
-      <div
-        // onClick={showMenu}
-        className={`${Styles.Mobile_Menu} ${menu ? Styles.ShowMenu : ""}`}
-      >
+      <div className={`${Styles.Mobile_Menu} ${menu ? Styles.ShowMenu : ""}`}>
         <div className={Styles.Content_Container}>
           <div className={Styles.Header}>
             <div className={Styles.Menu_Left_Side}>
@@ -118,14 +75,8 @@ const Nav = () => {
                 <img src={""} className={Styles.Logo} alt="" />
               </div>
 
-              <h3 className={Styles.Brand}>Dev Rook</h3>
+              <h3 className={Styles.Brand}>D&E Marine</h3>
             </div>
-
-            <CloseIcon
-              sx={{ fontSize: 25 }}
-              onClick={showMenu}
-              className={Styles.Close_Icon}
-            />
           </div>
           <ul className={Styles.Mobile_Navlink_Container}>
             <Link to={"/"} onClick={showMenu} className={Styles.Menu_Navlink}>
